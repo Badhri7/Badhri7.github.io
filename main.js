@@ -284,17 +284,7 @@ function initResumeDownload() {
         pdfLink.click();
         document.body.removeChild(pdfLink);
 
-        // Trigger scuba_cat.gif download after a brief delay
-        setTimeout(() => {
-            const gifLink = document.createElement('a');
-            gifLink.href = 'scuba_cat.gif';
-            gifLink.download = 'scuba_cat.gif';
-            document.body.appendChild(gifLink);
-            gifLink.click();
-            document.body.removeChild(gifLink);
-        }, 1200);
-
-        // Show the overlay diving cat animation
+        // Show the overlay diving cat animation on screen
         showScubaCatOverlay();
     });
 }
