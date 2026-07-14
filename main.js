@@ -245,7 +245,7 @@ function initForest() {
     }
 
     // Fetch count from Abacus API
-    fetch(jasoncameronUrl)
+    fetch(jasoncameronUrl + '?t=' + Date.now())
         .then(response => {
             if (!response.ok) throw new Error('API server returned error');
             return response.json();
