@@ -12,367 +12,237 @@
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="hero">
-                <div class="hero-content">
-                    <div class="profile-picture">
-                        <img src="Badhri_dp.jpg" alt="K V Badhrinarayanan" class="profile-img">
-                    </div>
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="terminal-title">~/portfolio</div>
-                        </div>
-                        <div class="terminal-body">
-                            <div class="line">
-                                <span class="prompt">$</span>
-                                <span class="command" id="typed-intro"></span>
-                            </div>
-                            <div class="output" id="output-name">
-                                <h1>K V Badhrinarayanan</h1>
-                                <p class="hero-subtitle">ML Engineer</p>
-                                <p class="hero-tagline">Building intelligent systems at the intersection of vision,
-                                    language, and 3D understanding.</p>
-                                <div class="hero-links">
-                                    <div class="social-links">
-                                        <a href="mailto:badhrik@andrew.cmu.edu" aria-label="Email">
-                                            <i class="fas fa-envelope"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/badhri7897/" target="_blank"
-                                            aria-label="LinkedIn">
-                                            <i class="fab fa-linkedin"></i>
-                                        </a>
-                                        <a href="https://github.com/Badhri7" target="_blank" aria-label="GitHub">
-                                            <i class="fab fa-github"></i>
-                                        </a>
-                                    </div>
-                                    <a href="resume.pdf" class="btn btn-accent" download>
-                                        <i class="fas fa-download"></i> Resume
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="layout">
+        <!-- Sidebar Column (Left on Desktop, Top on Mobile) -->
+        <aside class="sidebar">
+            <header class="header">
+                <h1 class="name">K V Badhrinarayanan</h1>
+                <p class="subtitle">ML Engineer | 3D Vision · RAGs · Multimodal</p>
+                <img src="Badhri_dp.jpg" alt="K V Badhrinarayanan" class="profile-pic">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Pittsburgh, Pennsylvania</p>
+                <p class="tagline">Building intelligent systems at the intersection of vision, language, and 3D understanding.</p>
+            </header>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+
+            <div class="contact-links">
+                <a href="mailto:badhrik@andrew.cmu.edu" aria-label="Email">
+                    <i class="fas fa-envelope"></i> badhrik@andrew.cmu.edu
+                </a>
+                <a href="https://www.linkedin.com/in/badhri7897/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Badhri7" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="resume.pdf" id="resume-download-btn" class="resume-btn" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
             </div>
-        </header>
 
-        <nav>
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul id="nav-menu">
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-            </ul>
-        </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle-btn" class="theme-toggle-text-btn" aria-label="Toggle light/dark mode">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </aside>
 
-        <main>
-            <!-- About Section -->
-            <section id="about">
-                <h2>About</h2>
-                <div class="about-content animate-on-scroll">
-                    <p>
-                        I'm a <span class="highlight">Machine Learning Engineer</span> with expertise in computer
-                        vision, 3D scene understanding, and multimodal learning. Currently pursuing a Master's in
-                        Computer Vision at <span class="highlight">Carnegie Mellon University</span>, I’m passionate
-                        about enabling robots to perceive and understand the world visually.
-                    </p>
-                </div>
-
-                <div class="focus-areas">
-                    <div class="focus-card animate-on-scroll">
-                        <span class="focus-icon"></span>
-                        <h4>3D Vision & NeRFs</h4>
-                        <p>Neural radiance fields, 3D Gaussian splatting, and multi-view reconstruction</p>
-                    </div>
-                    <div class="focus-card animate-on-scroll">
-                        <span class="focus-icon"></span>
-                        <h4>Multimodal Learning</h4>
-                        <p>Vision-language models, Graph-RAG retrieval, and cross-modal reasoning</p>
-                    </div>
-                    <div class="focus-card animate-on-scroll">
-                        <span class="focus-icon"></span>
-                        <h4>Generative Models</h4>
-                        <p>Diffusion models, video synthesis, and controllable image generation</p>
-                    </div>
-                    <div class="focus-card animate-on-scroll">
-                        <span class="focus-icon"></span>
-                        <h4>Robust Visual Reasoning</h4>
-                        <p>Low-light enhancement, noise-robust perception, and depth estimation</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item animate-on-scroll">
-                    <div class="edu-logo">
-                        <img src="CMU_Logo.jpg" alt="Carnegie Mellon University Logo">
-                    </div>
-                    <div class="edu-details">
-                        <h3>Carnegie Mellon University</h3>
-                        <p>Master in Computer Vision</p>
-                        <p><i class="fas fa-calendar-alt"></i> Aug 2025 – Dec 2026</p>
-                        <p><i class="fas fa-star"></i> GPA: 3.8/4.0</p>
-                        <p><i class="fas fa-book"></i> Relevant Coursework: Advanced Computer Vision, Visual Learning
-                            and Recognition, Learning for 3D Vision</p>
-                    </div>
-                </div>
-                <div class="education-item animate-on-scroll">
-                    <div class="edu-logo">
-                        <img src="SNU_Logo.jpg" alt="SNU Logo">
-                    </div>
-                    <div class="edu-details">
-                        <h3>Shiv Nadar University Chennai</h3>
-                        <p>Bachelor of Technology in Artificial Intelligence and Data Science</p>
-                        <p><i class="fas fa-calendar-alt"></i> Aug 2021 – Jul 2025</p>
-                        <p><i class="fas fa-star"></i> GPA: 8.8/10.0</p>
-                        <p><i class="fas fa-book"></i> Relevant Coursework: Machine Learning, Deep Learning, Linear
-                            Algebra, Image and Video Processing, Natural Language Processing, Discrete Mathematics,
-                            Optimization Techniques</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience">
-                <h2>Experience</h2>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-date">
-                        <span>May 2024 – Aug 2024</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Undergraduate Research Intern</h3>
-                        <h4>Indian Institute of Technology Madras · Advised by Dr. Kaushik Mitra</h4>
-                        <ul>
-                            <li>Co-developed a generalizable, noise-robust NeRF model for lensless imaging using a
-                                transformer-based architecture for 3D scene reconstruction from noisy optical inputs.
-                            </li>
-                            <li>Curated the first multi-view lensless dataset and achieved 22.8 PSNR, surpassing SOTA by
-                                +2.6 PSNR on nerf_llff, ibrnet_collected, and real_iconic_noface benchmarks.</li>
-                            <li>Designed a stereo image synthesis pipeline for rocket launch data with encoder-decoder
-                                disparity warping, plus gated convolution and FFT inpainting to support ISRO's 3D
-                                visualization workflows.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-date">
-                        <span>Mar 2024 – May 2024</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Undergraduate Research Intern</h3>
-                        <h4>Shiv Nadar University Chennai · Advised by Dr. Chandrakala</h4>
-                        <ul>
-                            <li>Proposed U-DALLIE, a UNet-based depth realization module for low-light image
-                                enhancement, boosting clarity and color retention.</li>
-                            <li>Achieved PSNR 25.31 on the LOL dataset, outperforming standard enhancement networks by
-                                +3.19 PSNR.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-date">
-                        <span>May 2023 – Jul 2023</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Intern Engineer</h3>
-                        <h4>COVLANT.AI · DeepGenAI Lab under Dr. Chandrakala</h4>
-                        <ul>
-                            <li>Co-pioneered U-DALLIE, a novel UNet-based Depth Realization Network designed to plug
-                                before any Low Light Image Enhancement network.</li>
-                            <li>Enhanced image clarity and color retention, achieving a PSNR of 25.31 on the LOL
-                                dataset.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Publications Section -->
-            <section id="publications">
-                <h2>Publications</h2>
-                <div class="publication-card animate-on-scroll">
-                    <span class="pub-venue">WACV 2025</span>
-                    <h3>GANESH: Generalizable NeRF for Lensless Imaging</h3>
-                    <p class="pub-conference">IEEE/CVF Winter Conference on Applications of Computer Vision</p>
-                    <p class="pub-authors">
-                        <strong>Badhrinarayanan K V*</strong>, Rakesh Raj*, Akshat Kaimal*, Vinayak Gupta, Rohit
-                        Choudhary, Chandrakala Shanmuganathan, Kaushik Mitra.
-                    </p>
-                    <p class="pub-description">Proposes a generalizable, noise-robust NeRF framework for lensless camera
-                        imaging with improved reconstruction fidelity.</p>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-header">
-                            <i class="fas fa-heartbeat"></i>
-                            <h3>Graph-RAG Enhanced Multimodal Medical VQA for Dermatology</h3>
+        <!-- Content Column (Right on Desktop, Bottom on Mobile) -->
+        <div class="content-column">
+            <main>
+                <!-- About Section -->
+                <section id="about">
+                    <h2 class="section-title">About</h2>
+                    <div class="content">
+                        <p>
+                            I'm a <strong>Machine Learning Engineer</strong> with expertise in computer vision, 3D scene understanding, and multimodal learning. Currently pursuing a Master's in Computer Vision at <strong>Carnegie Mellon University</strong>, I’m passionate about enabling robots to perceive and understand the world visually.
+                        </p>
+                        
+                        <div class="focus-list">
+                            <h3>Focus Areas</h3>
+                            <ul>
+                                <li><strong>3D Vision & NeRFs:</strong> Neural radiance fields, 3D Gaussian splatting, and multi-view reconstruction</li>
+                                <li><strong>Multimodal Learning:</strong> Vision-language models, Graph-RAG retrieval, and cross-modal reasoning</li>
+                                <li><strong>Generative Models:</strong> Diffusion models, video synthesis, and controllable image generation</li>
+                                <li><strong>Robust Visual Reasoning:</strong> Low-light enhancement, noise-robust perception, and depth estimation</li>
+                            </ul>
                         </div>
-                        <div class="project-body">
-                            <p>Co-engineered Med-GRIM, a medical VQA system, achieving 83.33% accuracy through
-                                graph-based retrieval and prompt engineering.</p>
-                            <p>Proposed BIND multimodal encoder and boosted visual-language embedding accuracy to
-                                87.59%, with Graph-RAG retrieval across OCR-VQA and OKVQA.</p>
-                            <div class="project-technologies">
-                                <span>Graph-RAG</span>
-                                <span>Multimodal VQA</span>
-                                <span>SLMs</span>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education">
+                    <h2 class="section-title">Education</h2>
+                    <div class="content">
+                        <div class="edu-item">
+                            <div class="item-details">
+                                <p class="meta">August 2025 – December 2026 | GPA: 3.8/4.0</p>
+                                <h3>Carnegie Mellon University</h3>
+                                <p class="degree">Master in Computer Vision</p>
+                                <p class="coursework">Relevant Coursework: <strong>Advanced Computer Vision</strong>, <strong>Visual Learning and Recognition</strong>, <strong>Learning for 3D Vision</strong></p>
+                            </div>
+                            <div class="item-logo">
+                                <img src="CMU_Logo.jpg" alt="Carnegie Mellon University Logo">
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <div class="item-details">
+                                <p class="meta">August 2021 – July 2025 | GPA: 8.8/10.0</p>
+                                <h3>Shiv Nadar University Chennai</h3>
+                                <p class="degree">Bachelor of Technology in Artificial Intelligence and Data Science</p>
+                                <p class="coursework">Relevant Coursework: <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>Linear Algebra</strong>, <strong>Image and Video Processing</strong>, <strong>Natural Language Processing</strong>, <strong>Discrete Mathematics</strong>, <strong>Optimization Techniques</strong></p>
+                            </div>
+                            <div class="item-logo">
+                                <img src="SNU_Logo.jpg" alt="Shiv Nadar University Chennai Logo">
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-header">
-                            <i class="fas fa-car"></i>
-                            <h3>Language-Guided Data Augmentation for Autonomous Driving</h3>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="content">
+                        <div class="exp-item">
+                            <div class="item-details">
+                                <p class="exp-date">May 2026 – Present</p>
+                                <h3>Software Engineer Intern</h3>
+                                <p class="exp-company">Apple · Vision Pro Group</p>
+                                <ul>
+                                    <li>Developed a <strong>Neural Shader for Apple Vision Pro</strong> to render physically based materials in real time, achieving <strong>35.1 PSNR</strong> and <strong>0.986 SSIM</strong> against ground truth.</li>
+                                    <li>Integrated <strong>Image-Based Lighting (IBL)</strong> and designed a generalized neural material model capable of rendering unseen materials for novel-view relighting.</li>
+                                    <li>Optimized and deployed the model as an <strong>FP16 Metal compute shader</strong> and presented the project to Apple senior leadership.</li>
+                                </ul>
+                            </div>
+                            <div class="item-logo">
+                                <img src="Apple_Logo.svg" alt="Apple Logo">
+                            </div>
                         </div>
-                        <div class="project-body">
-                            <p>Developed Prompt2Drive, a language-guided generative framework for ADAS augmentation to
-                                synthesize safety-critical long-tail and adverse weather events.</p>
-                            <p>Engineered a hybrid 2D/3D weather synthesis pipeline and an OMG-style compression
-                                pipeline reducing scene storage by more than 10x.</p>
-                            <div class="project-technologies">
-                                <span>Diffusion Models</span>
-                                <span>3D Gaussian Fields</span>
-                                <span>ADAS</span>
+
+                        <div class="exp-item">
+                            <div class="item-details">
+                                <p class="exp-date">May 2024 – August 2024</p>
+                                <h3>Undergraduate Research Intern</h3>
+                                <p class="exp-company">Indian Institute of Technology Madras</p>
+                                <p class="exp-subtitle-details">3D Novel View Synthesis (WACV 2025)</p>
+                                <ul>
+                                    <li>Co-developed a transformer-based, <strong>generalizable Neural Radiance Field (NeRF)</strong> for lensless imaging, enabling robust 3D scene reconstruction from noisy optical inputs.</li>
+                                    <li>Curated the first <strong>multi-view lensless dataset</strong>, achieving <strong>22.8 PSNR</strong> and outperforming state-of-the-art methods by <strong>+2.6 PSNR</strong> across multiple benchmark datasets.</li>
+                                    <li>Developed a <strong>stereo image synthesis pipeline</strong> for an ISRO-funded project using depth estimation, disparity warping, and Fast Fourier inpainting to support 3D visualization of rocket launches.</li>
+                                </ul>
+                            </div>
+                            <div class="item-logo">
+                                <img src="IITM_Logo.png" alt="IIT Madras Logo">
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-header">
-                            <i class="fas fa-cube"></i>
+                </section>
+
+                <!-- Publications Section -->
+                <section id="publications">
+                    <h2 class="section-title">Publications</h2>
+                    <div class="content">
+                        <div class="pub-item">
+                            <p class="pub-venue">WACV 2025</p>
+                            <h3>GANESH: Generalizable NeRF for Lensless Imaging</h3>
+                            <p class="pub-conference">IEEE/CVF Winter Conference on Applications of Computer Vision</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="content">
+                        <div class="project-item">
                             <h3>3D Gaussian Splatting Concept Transfer using Video Diffusion</h3>
+                            <ul>
+                                <li>Developed a <strong>3D Gaussian Splatting framework</strong> for localized object editing, enabling realistic texture and material transfer while preserving scene geometry.</li>
+                                <li>Integrated a <strong>Video Diffusion Model</strong> to generate 360° multi-view consistent edits with accurate texture alignment across novel viewpoints.</li>
+                                <li>Demonstrated high-fidelity style transfer on <strong>Objaverse assets</strong> while reducing geometric artifacts common in text-driven 3D editing methods.</li>
+                            </ul>
+                            <p class="tags">3D Gaussian Splatting &middot; Video Diffusion &middot; 3D Editing</p>
                         </div>
-                        <div class="project-body">
-                            <p>Designed a 3D concept transfer framework for localized object-level feature transfer
-                                using a VACE-based video diffusion model.</p>
-                            <p>Achieved 360° multi-view consistency via LoRA fine-tuning with depth-guided
-                                regularization on assets from Objaverse.</p>
-                            <div class="project-technologies">
-                                <span>3D Gaussian Splatting</span>
-                                <span>Video Diffusion</span>
-                                <span>LoRA</span>
-                            </div>
+
+                        <div class="project-item">
+                            <h3>DSL Backend for Agentic GUI Automation (OSWorld)</h3>
+                            <ul>
+                                <li>Developed a <strong>domain-specific language (DSL) backend</strong> enabling structured reasoning and execution for GUI agents operating in the OSWorld benchmark.</li>
+                                <li>Designed a <strong>JSON-based execution pipeline</strong> integrating accessibility trees, screenshots, and action history to improve agent reliability and eliminate looping failures.</li>
+                                <li>Improved task success to <strong>50%</strong>, reducing step omissions from 16.7% to <strong>2.7%</strong> while eliminating looping and repetitive execution failures.</li>
+                            </ul>
+                            <p class="tags">Agentic AI &middot; GUI Automation &middot; DSL Backend &middot; OSWorld</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h3>Graph-RAG Enhanced Multimodal Medical VQA for Dermatology</h3>
+                            <ul>
+                                <li>Developed <strong>Med-GRIM</strong>, a Graph-RAG medical VQA system integrating clinical knowledge with prompt-engineered SLMs, achieving <strong>83.33% VQA accuracy</strong>.</li>
+                                <li>Designed <strong>BIND</strong>, a multimodal encoder improving vision-language alignment, increasing embedding accuracy to <strong>87.59%</strong>.</li>
+                                <li>Built <strong>DermaGraph</strong>, a dermatology knowledge graph dataset enabling grounded multimodal retrieval for scalable medical visual question answering.</li>
+                            </ul>
+                            <p class="tags">Graph-RAG &middot; Multimodal VQA &middot; SLMs &middot; Knowledge Graphs</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h3>Adverse Weather Data Generation for Autonomous Driving</h3>
+                            <ul>
+                                <li>Developed a <strong>data augmentation pipeline</strong> using 3D Gaussian Splatting to synthesize adverse weather conditions for autonomous driving perception.</li>
+                                <li>Integrated diffusion models with dynamic particle-field rendering to generate realistic rain and snow while preserving scene geometry and camera consistency.</li>
+                                <li>Enabled scalable generation of diverse driving scenarios for perception model training without collecting additional real-world driving data.</li>
+                            </ul>
+                            <p class="tags">Autonomous Driving &middot; 3D Gaussian Splatting &middot; Diffusion Models &middot; Perception</p>
                         </div>
                     </div>
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-header">
-                            <i class="fas fa-file-alt"></i>
-                            <h3>Multi-Topic Webpage and Document Summarizer</h3>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="content">
+                        <p class="skills-line"><strong>ML / AI:</strong> <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>Computer Vision</strong>, <strong>Neural Radiance Fields</strong>, <strong>Multimodal Learning</strong>, <strong>Natural Language Processing</strong>, <strong>Graph-RAG</strong></p>
+                        <p class="skills-line"><strong>Languages:</strong> <strong>Python</strong>, <strong>C / C++</strong>, <strong>Java</strong>, <strong>JavaScript</strong>, <strong>R</strong>, <strong>SQL</strong></p>
+                        <p class="skills-line"><strong>Frameworks & Tools:</strong> <strong>PyTorch</strong>, <strong>TensorFlow</strong>, <strong>Keras</strong>, <strong>Scikit-learn</strong>, <strong>NumPy</strong>, <strong>Pandas</strong>, <strong>OpenCV</strong>, <strong>NLTK</strong>, <strong>Flask</strong>, <strong>Express</strong>, <strong>React</strong>, <strong>Node.js</strong>, <strong>Streamlit</strong>, <strong>Git</strong>, <strong>Neo4j</strong>, <strong>MongoDB</strong></p>
+                    </div>
+                </section>
+
+                <!-- Digital Forest Section -->
+                <section id="forest" class="forest-section">
+                    <h2 class="section-title">Digital Forest</h2>
+                    <div class="content">
+                        <p>
+                            A tree is planted here for every visit to this page, and a forest animal joins for every 5 visits.
+                        </p>
+                        <div class="forest-info">
+                            <span id="visit-count">...</span> visits &middot; <span id="tree-count">...</span> trees planted &middot; <span id="animal-count">...</span> wildlife joined
                         </div>
-                        <div class="project-body">
-                            <p>Built a large-scale summarization pipeline processing 1k+ research papers, handling noisy
-                                OCR and malformed HTML with BeautifulSoup and PyPDF2.</p>
-                            <p>Designed hybrid embeddings and fine-tuned BART-Large, T5-3B, and Pegasus, improving
-                                ROUGE-L F1 by 12% and BERTScore by 1.6.</p>
-                            <div class="project-technologies">
-                                <span>BART</span>
-                                <span>T5</span>
-                                <span>Pegasus</span>
-                                <span>Sentence-BERT</span>
-                            </div>
+                        <div class="forest-display" id="forest-display">
+                            <!-- Trees will be generated here -->
                         </div>
                     </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; <span id="current-year"></span> K V Badhrinarayanan. All rights reserved.</p>
                 </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills">
-                <h2>Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-category animate-on-scroll">
-                        <h3>ML / AI</h3>
-                        <div class="skill-cloud">
-                            <span class="skill-tag skill-tag--primary">Machine Learning</span>
-                            <span class="skill-tag skill-tag--primary">Deep Learning</span>
-                            <span class="skill-tag skill-tag--primary">Computer Vision</span>
-                            <span class="skill-tag skill-tag--primary">Neural Radiance Fields</span>
-                            <span class="skill-tag skill-tag--primary">Multimodal Learning</span>
-                            <span class="skill-tag skill-tag--primary">Natural Language Processing</span>
-                            <span class="skill-tag skill-tag--primary">Graph-RAG</span>
-                        </div>
-                    </div>
-                    <div class="skill-category animate-on-scroll">
-                        <h3>Languages</h3>
-                        <div class="skill-cloud">
-                            <span class="skill-tag skill-tag--primary">Python</span>
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">R</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category animate-on-scroll">
-                        <h3>Frameworks & Tools</h3>
-                        <div class="skill-cloud">
-                            <span class="skill-tag skill-tag--primary">PyTorch</span>
-                            <span class="skill-tag skill-tag--primary">TensorFlow</span>
-                            <span class="skill-tag">Keras</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag skill-tag--primary">OpenCV</span>
-                            <span class="skill-tag">NLTK</span>
-                            <span class="skill-tag">Neo4j</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Streamlit</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Hadoop</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; <span id="current-year"></span> K V Badhrinarayanan. All rights reserved.</p>
-        </footer>
+            </footer>
+        </div>
     </div>
-
-    <!-- Visitor Map + Theme Toggle -->
-    <div class="palette-toggle">
-        <a href="https://mapmyvisitors.com/web/1c3md" target="_blank" rel="noopener noreferrer"
-            class="visitor-map-btn" id="visitor-map-btn" aria-label="View visitor map">
-            <i class="fas fa-globe"></i>
-        </a>
-        <button class="theme-toggle-btn" id="theme-mode-btn" aria-label="Toggle light/dark mode">
-            <i class="fas fa-moon"></i>
-        </button>
-    </div>
-
-    <!-- MapMyVisitors Tracking -->
-    <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=rb8RYpj1Oym67d7MjANv6OEtw43kP-AQRJrl9YyASfo&cl=ffffff&w=a"></script>
 
     <script src="main.js"></script>
 </body>
