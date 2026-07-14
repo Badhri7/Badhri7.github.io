@@ -137,7 +137,7 @@ function initForest() {
     // Use a unique namespace/key for the website on Abacus API
     const abacusUrl = 'https://api.counterapi.dev/v1/badhri7-github-io/visits/up'; // Let's also check abacus.jasoncameron.dev
     const jasoncameronUrl = 'https://abacus.jasoncameron.dev/hit/badhri7-github-io/visits';
-    const baseOffset = 0; // Baseline visits set to 0
+    const baseOffset = 6; // Baseline visits set to 6
     const visitsPerTree = 1;
     const visitsPerAnimal = 5;
 
