@@ -274,7 +274,15 @@ function initResumeDownload() {
     if (!resumeBtn) return;
 
     resumeBtn.addEventListener('click', function(e) {
-        // Let the default resume.pdf download occur naturally
+        e.preventDefault(); // Prevent default inline navigation
+
+        // Trigger resume.pdf download programmatically
+        const pdfLink = document.createElement('a');
+        pdfLink.href = 'resume.pdf';
+        pdfLink.download = 'resume.pdf';
+        document.body.appendChild(pdfLink);
+        pdfLink.click();
+        document.body.removeChild(pdfLink);
 
         // Trigger scuba_cat.gif download after a brief delay
         setTimeout(() => {
