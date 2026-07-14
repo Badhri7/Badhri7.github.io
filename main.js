@@ -276,10 +276,10 @@ function initResumeDownload() {
     resumeBtn.addEventListener('click', function(e) {
         e.preventDefault(); // Prevent default inline navigation
 
-        // Trigger resume.pdf download programmatically
+        // Trigger ML_resume.pdf download programmatically
         const pdfLink = document.createElement('a');
-        pdfLink.href = 'resume.pdf';
-        pdfLink.download = 'resume.pdf';
+        pdfLink.href = 'ML_resume.pdf';
+        pdfLink.download = 'ML_resume.pdf';
         document.body.appendChild(pdfLink);
         pdfLink.click();
         document.body.removeChild(pdfLink);
