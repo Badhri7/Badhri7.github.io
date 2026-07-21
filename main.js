@@ -20,6 +20,9 @@ function initNavigation() {
 
     if (sections.length === 0 || navLinks.length === 0) return;
 
+    // Only sections that actually have a nav link (e.g. excludes the trailing Digital Forest section)
+    const navSectionIds = Array.from(navLinks).map(link => link.getAttribute('href').slice(1));
+
     // Update active nav link on scroll
     function updateActiveLink() {
         let currentSectionId = '';
@@ -37,7 +40,7 @@ function initNavigation() {
 
         // Fallback for bottom of the page
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-            currentSectionId = sections[sections.length - 1].getAttribute('id');
+            currentSectionId = navSectionIds[navSectionIds.length - 1];
         }
 
         if (currentSectionId) {
@@ -135,9 +138,8 @@ function initForest() {
     if (!visitCountEl || !treeCountEl || !animalCountEl || !forestDisplay) return;
 
     // Use a unique namespace/key for the website on Abacus API
-    const abacusUrl = 'https://api.counterapi.dev/v1/badhri7-github-io-v3/visits/up';
     const jasoncameronUrl = 'https://abacus.jasoncameron.dev/hit/badhri7-github-io-v3/visits';
-    const baseOffset = 0; // Baseline visits set to 0
+    const baseOffset = -48; // API counter is at 74; offset makes the displayed total read 26
     const visitsPerTree = 1;
     const visitsPerAnimal = 5;
 
