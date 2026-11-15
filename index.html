@@ -49,7 +49,10 @@
                     <i class="fab fa-github"></i> GitHub
                 </a>
                 <a href="ML_resume.pdf" id="resume-download-btn" class="resume-btn" target="_blank" download>
-                    <i class="fas fa-download"></i> Download Resume
+                    <i class="fas fa-download"></i> Download Resume (MLE)
+                </a>
+                <a href="CV_resume.pdf" class="resume-btn" target="_blank" download>
+                    <i class="fas fa-download"></i> Download Resume (CV)
                 </a>
             </div>
 
@@ -170,41 +173,47 @@
                         <div class="project-item">
                             <h3>3D Gaussian Splatting Concept Transfer using Video Diffusion</h3>
                             <ul>
-                                <li>Developed a <strong>3D Gaussian Splatting framework</strong> for localized object editing, enabling realistic texture and material transfer while preserving scene geometry.</li>
-                                <li>Integrated a <strong>Video Diffusion Model</strong> to generate 360° multi-view consistent edits with accurate texture alignment across novel viewpoints.</li>
-                                <li>Demonstrated high-fidelity style transfer on <strong>Objaverse assets</strong> while reducing geometric artifacts common in text-driven 3D editing methods.</li>
+                                <li>Developed a framework for extracting fine-grained visual concepts from <strong>3DGS</strong> scenes and transferring them with <strong>360&deg; multi-view consistency</strong> via personalized video inpainting and depth-aware 3D refinement.</li>
+                                <li>Implemented <strong>VACE LoRA finetuning</strong> on masked multi-view videos, enabling consistent concept transfer on textures and accessories; identified limitations on complex geometry through qualitative evaluation.</li>
                             </ul>
-                            <p class="tags">3D Gaussian Splatting &middot; Video Diffusion &middot; 3D Editing</p>
+                            <p class="tags">Gaussian Splats &middot; LoRA &middot; Diffusion</p>
                         </div>
 
                         <div class="project-item">
-                            <h3>DSL Backend for Agentic GUI Automation (OSWorld)</h3>
+                            <h3>Language-Guided Data Augmentation for Autonomous Driving</h3>
                             <ul>
-                                <li>Developed a <strong>domain-specific language (DSL) backend</strong> enabling structured reasoning and execution for GUI agents operating in the OSWorld benchmark.</li>
-                                <li>Designed a <strong>JSON-based execution pipeline</strong> integrating accessibility trees, screenshots, and action history to improve agent reliability and eliminate looping failures.</li>
-                                <li>Improved task success to <strong>50%</strong>, reducing step omissions from 16.7% to <strong>2.7%</strong> while eliminating looping and repetitive execution failures.</li>
+                                <li>Developed a framework using <strong>4D Gaussian fields</strong> for realistic weather particle construction (rain, snow, fog) with user-controlled severity, achieving <strong>0.245 Bhattacharyya distance</strong> for multi-view color consistency.</li>
+                                <li>Designed a <strong>Temporal-View attention</strong> mechanism ensuring <strong>0.041 warp error</strong> across frames, enabling robust multi-view and temporal consistency.</li>
                             </ul>
-                            <p class="tags">Agentic AI &middot; GUI Automation &middot; DSL Backend &middot; OSWorld</p>
+                            <p class="tags">4D Gaussian &middot; PyTorch &middot; Autonomous Driving</p>
                         </div>
 
                         <div class="project-item">
-                            <h3>Graph-RAG Enhanced Multimodal Medical VQA for Dermatology</h3>
+                            <h3>Med-GRIM: Graph-RAG Medical VQA</h3>
                             <ul>
-                                <li>Developed <strong>Med-GRIM</strong>, a Graph-RAG medical VQA system integrating clinical knowledge with prompt-engineered SLMs, achieving <strong>83.33% VQA accuracy</strong>.</li>
-                                <li>Designed <strong>BIND</strong>, a multimodal encoder improving vision-language alignment, increasing embedding accuracy to <strong>87.59%</strong>.</li>
-                                <li>Built <strong>DermaGraph</strong>, a dermatology knowledge graph dataset enabling grounded multimodal retrieval for scalable medical visual question answering.</li>
+                                <li>Built <strong>Med-GRIM</strong>, a <strong>Graph-RAG</strong> system integrating clinical knowledge graphs with LLMs, achieving <strong>83.33%</strong> VQA accuracy on medical visual question answering.</li>
+                                <li>Designed <strong>BIND</strong>, a multimodal encoder, and curated the <strong>DermaGraph</strong> knowledge graph dataset, enabling grounded multimodal retrieval for scalable medical AI.</li>
                             </ul>
-                            <p class="tags">Graph-RAG &middot; Multimodal VQA &middot; SLMs &middot; Knowledge Graphs</p>
+                            <p class="tags">PyTorch &middot; Neo4j &middot; Knowledge Graphs</p>
                         </div>
 
                         <div class="project-item">
-                            <h3>Adverse Weather Data Generation for Autonomous Driving</h3>
+                            <h3>Distributed LLM Inference on Snapdragon Chips</h3>
                             <ul>
-                                <li>Developed a <strong>data augmentation pipeline</strong> using 3D Gaussian Splatting to synthesize adverse weather conditions for autonomous driving perception.</li>
-                                <li>Integrated diffusion models with dynamic particle-field rendering to generate realistic rain and snow while preserving scene geometry and camera consistency.</li>
-                                <li>Enabled scalable generation of diverse driving scenarios for perception model training without collecting additional real-world driving data.</li>
+                                <li>Architected a distributed inference pipeline for <strong>Llama 3</strong> across multiple <strong>Snapdragon devices</strong>, sharding layers sequentially and applying <strong>4-bit quantization</strong> to cut per-device memory.</li>
+                                <li>Engineered a low-latency <strong>TCP</strong> communication layer, enabling fully offline execution on memory-constrained edge hardware.</li>
                             </ul>
-                            <p class="tags">Autonomous Driving &middot; 3D Gaussian Splatting &middot; Diffusion Models &middot; Perception</p>
+                            <p class="tags">ExecuTorch &middot; QNN &middot; CUDA</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h3>Computer-Use Agent on OSWorld</h3>
+                            <ul>
+                                <li>Built an LLM-powered computer-use agent around a structured <strong>DSL</strong> action interface (click, type, wait, extract) wrapping <code>pyautogui</code> with result validation, achieving <strong>50% task success</strong> (+3% vs Sonnet 4 baseline).</li>
+                                <li>Grounded actions in accessibility-tree element references instead of screenshot coordinates, feeding validation results back to the LLM for error recovery.</li>
+                                <li>Added action-history tracking, cutting step-omission errors by <strong>84%</strong> (16.7% &rarr; 2.7%) and eliminating agent looping.</li>
+                            </ul>
+                            <p class="tags">Python &middot; LLMs &middot; Accessibility Trees</p>
                         </div>
                     </div>
                 </section>
